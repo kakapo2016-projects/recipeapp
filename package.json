@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node test/*.js | tap-spec",
     "build": "browserify ./src/index.js -o ./public/bundle.js",
     "watch": "watchify ./src/index.js -o ./public/bundle.js",
     "start": "budo -d ./public --serve bundle.js --live",
@@ -30,6 +30,7 @@
     "express": "^4.13.4",
     "nodemon": "^1.8.1",
     "superagent": "^1.7.2",
+    "tap-spec": "^4.1.1",
     "tape": "^4.4.0",
     "watchify": "^3.7.0"
   }

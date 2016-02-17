@@ -9,7 +9,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "browserify ./src/index.js -o ./public/bundle.js",
-    "watch": "watchify ./src/index.js -o ./public/bundle.js",
     "start": "budo -d ./public --serve bundle.js --live",
     "server": "nodemon ./server/server.js"
   },

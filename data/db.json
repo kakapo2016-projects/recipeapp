@@ -1,1 +1,16 @@
-{"fridge":[{"item":"eggs"},{"item":"mushrooms"},{"item":"cheese"},{"item":"apples"},{"item":"food"},{"item":"food"},{"item":"food"},{"item":""},{"item":"d"},{"item":"d"},{"item":"rrrr"},{"item":""},{"item":"NICK"},{"item":"Hello Gay"}]}
+{
+  "fridge": [
+      {
+        "item": "eggs",
+        "ID": "d0274960-0084-64e8-cbd4-a8da61bf6886"
+      },
+      {
+        "item": "mushrooms",
+        "ID": "c7c4987e-3119-18b2-55fe-6defae5aa4ea"
+      },
+      {
+        "item": "cheese",
+        "ID": "d5da9624-964d-cc64-5451-99094f1082fa"
+      }
+    ]
+}

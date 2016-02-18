@@ -4,6 +4,7 @@ var cors = require('cors')
 var path = require('path')
 var bodyParser = require('body-parser')
 var app = express()
+var dotenv = require('dotenv')
 
 app.use(bodyParser.json());
 
@@ -68,3 +69,14 @@ app.listen(3000, function () {
 
 
 // path.join(__dirname, '../data/db.json')
+
+
+// API
+
+// load environment variables
+dotenv.load()
+
+// configure foodtofork client
+var foodToForkClient = new foodToFork({
+  access_key = process.env.FOODTOFORK_API_KEY
+});

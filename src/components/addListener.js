@@ -5,5 +5,6 @@ module.exports = function(){
 		jquery('#foodButton').click(function(e) {
 			e.preventDefault()
 			console.log('click')
+			postRequest(newItem)
 		})
 	}

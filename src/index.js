@@ -1,3 +1,4 @@
-var append = require('./components/append.js')
+var getRequest = require('./components/getRequest')
+var extractFridgeList = require('./components/extractFridgeList')
 
-append('Hello Gay', "#food_list")
+getRequest('http://localhost:3000/fridge', extractFridgeList)

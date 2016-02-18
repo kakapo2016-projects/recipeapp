@@ -14,13 +14,12 @@ app.get('/', function (req, res) {
 
 app.get('/fridge', function (req, res) {
   console.log("in get")
-   var fullPath = '../data/db.json'
-      fs.readFile('/home/gay/workspace/recipeapp/data/db.json', 'utf8', function(err, data) {
+   var thisPath = (__dirname + '/../data/db.json')
+   console.log('fullPath', thisPath)
+   fs.readFile(thisPath, 'utf8', function(err, data) {
       if (err) {
         console.log("error", err);
       } else {
-      //  var fridge = data.fridge;
-      //  res.json(data);
        res.json(JSON.parse(data))
       }
      })

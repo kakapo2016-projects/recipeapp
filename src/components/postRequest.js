@@ -1,15 +1,21 @@
 var request = require('superagent')
 
-
-var postRequest = function(newItem, callBack) {
-
+//var posturl = 'http://localhost:3000/addItemToFridge'
+var postRequest = function(posturl, newItem) {
+//  console.log('adding', newItem)
 	request
-		.post('http://localhost:3000/fridge')
+		.post(posturl)
 		.send(newItem)
 		.end(function(err, res) {
-			if (err) throw err;
-			console.log('Adding item')
-			console.log(JSON.stringify(newItem))
+			if (err){
+				console.log('error', err)
+					//throw err;
+			} else {
+				console.log(res.body)
+			}
+
+		//	console.log('Adding item')
+			//console.log(JSON.stringify(newItem))
 		}
 	)
 }

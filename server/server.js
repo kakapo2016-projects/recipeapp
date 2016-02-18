@@ -31,28 +31,34 @@ app.get('/fridge', function (req, res) {
 
 app.post('/addItemToFridge', function (req, res) {
   console.log("in post", req.body)
-  var item = req.body.item
+  var item = req.body
   // hard code an item
   //var item = '{"item":"tomatoes"}'
   var thisPath = (__dirname + '/../data/db.json')
-  fs.readFile(thisPath, 'utf8', function(err, data) {
-    if (err) {
-      console.log("error", thisPath);
-    } else {
-       var itemsData = JSON.parse(data);        // convert to an array
-       var itemsArray = itemsData['fridge'];
-       itemsArray.push(JSON.parse(item));          // push the new item to the array of items
-       fs.writeFile(thisPath, JSON.stringify(itemsArray), 'utf8', function(err, data){
-         if (err){
-           console.log('error')
-         } else {
-           res.send('POST request to addItemToFridge')
-         }
+   fs.readFile(thisPath, 'utf8', function(err, data) {
+     if (err) {
+       console.log("error", thisPath);
+     } else {
 
-       })
+        var itemsData = JSON.parse(data);        // convert to an array
+        // console.log("read", itemsData.fridge)
+        var itemsArray = itemsData.fridge
+        itemsArray.push(item);          // push the new item to the array of items
+    //    console.log(itemsArray)
+        itemsData.fridge = itemsArray
+        var newFridgeData = JSON.stringify(itemsData)
+        console.log("string to write", newFridgeData)
+        fs.writeFile(thisPath, newFridgeData, 'utf8', function(err, data){
+          if (err){
+            console.log('error in write')
+          } else {
+            res.send(newFridgeData)
+          }
 
-     }
-  })
+        })
+
+      }
+   })
   // res.send(item)
 })
 

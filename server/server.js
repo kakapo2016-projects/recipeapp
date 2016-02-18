@@ -4,6 +4,9 @@ var cors = require('cors')
 var path = require('path')
 var bodyParser = require('body-parser')
 var app = express()
+var Guid = require('guid')
+
+//var Guid = new guid()
 
 app.use(bodyParser.json());
 
@@ -32,6 +35,10 @@ app.get('/fridge', function (req, res) {
 app.post('/addItemToFridge', function (req, res) {
   console.log("in post", req.body)
   var item = req.body
+//  console.log("newguid", ID)
+  var ID = newGuid()   // get a new guid
+  item["ID"] = ID
+
   // hard code an item
   //var item = '{"item":"tomatoes"}'
   var thisPath = (__dirname + '/../data/db.json')
@@ -44,10 +51,12 @@ app.post('/addItemToFridge', function (req, res) {
         // console.log("read", itemsData.fridge)
         var itemsArray = itemsData.fridge
         itemsArray.push(item);          // push the new item to the array of items
-    //    console.log(itemsArray)
+        console.log(itemsArray)
         itemsData.fridge = itemsArray
         var newFridgeData = JSON.stringify(itemsData)
+
         console.log("string to write", newFridgeData)
+
         fs.writeFile(thisPath, newFridgeData, 'utf8', function(err, data){
           if (err){
             console.log('error in write')
@@ -61,6 +70,11 @@ app.post('/addItemToFridge', function (req, res) {
    })
   // res.send(item)
 })
+
+function newGuid(){
+  var newID = Guid.raw()
+  return newID
+}
 
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!');

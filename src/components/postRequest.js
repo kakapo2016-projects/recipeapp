@@ -1,4 +1,6 @@
 var request = require('superagent')
+var getRequest = require('./getRequest')
+var extractFridgeList = require('./extractFridgeList')
 
 //var posturl = 'http://localhost:3000/addItemToFridge'
 var postRequest = function(posturl, newItem) {
@@ -12,10 +14,9 @@ var postRequest = function(posturl, newItem) {
 					//throw err;
 			} else {
 				console.log(res.body)
-			}
+				getRequest('http://localhost:3000/fridge', extractFridgeList)
 
-		//	console.log('Adding item')
-			//console.log(JSON.stringify(newItem))
+			}
 		}
 	)
 }

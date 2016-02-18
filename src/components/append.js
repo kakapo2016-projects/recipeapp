@@ -1,13 +1,11 @@
-var request = require('superagent')
 var $ = require('jquery')
 
-var testData = "This is test data"
 
-
-module.exports = function(){ 
-  $(document).ready(function () {
-    $("#food_list").append("<li>" + testData + "</li>")
-    console.log('lovely')
+module.exports = function(data, id){ 
+  var data2 = data
+  var id2 = id
+  $(document).ready(function (data2, id2) {
+    $(id).append("<li>" + data + "</li>")
   })
 }
 

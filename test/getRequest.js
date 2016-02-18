@@ -16,7 +16,6 @@ var expectedOutput = {
     ]
 }
 
-
 test("Get request test", function (t) {
 
 	t.equal(getRequest(), expectedOutput, "Expected output matches actual output")

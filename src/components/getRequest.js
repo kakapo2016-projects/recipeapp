@@ -2,12 +2,12 @@ var request = require('superagent')
 
 //get request for items in database
 
-var getRequest = function(appendToList) {
+var getRequest = function(append) {
 
 	request
 		.get('http://localhost:3000/fridge')
 		.end(function(err, res) {
-			appendToList(res.body)
+			append(res.body)
 			console.log('Getting items')
 		}
 	)

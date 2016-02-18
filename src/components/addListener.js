@@ -1,10 +1,10 @@
-var $ = require('jquery')
+var jquery = require('jquery') //will this conflict with cdn jquery
 
 module.exports = function(){
-	$(document).ready(function(){
-	$('#foodButton').submit(function(e) {
-		e.preventDefault()
-		console.log('click')
+
+		jquery('#foodButton').click(function(e) {
+			e.preventDefault()
+			console.log('click')
+			postRequest(newItem)
 		})
-	})
-}
+	}

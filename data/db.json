@@ -1,0 +1,13 @@
+{
+  "fridge": [
+      {
+        "item": "eggs"
+      },
+      {
+        "item": "mushrooms"
+      },
+      {
+        "item": "cheese"
+      }
+    ]
+}

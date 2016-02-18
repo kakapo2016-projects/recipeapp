@@ -1,4 +1,4 @@
-var $ = require('jquery') //will this conflict with cdn jquery
+// var $ = require('jquery') //will this conflict with cdn jquery
 
 module.exports = function(){
 	$(document).ready(function(){

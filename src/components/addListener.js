@@ -8,6 +8,7 @@ module.exports = function(callback){
 			console.log('click')
 			var newItem = {}
 			newItem["item"] = jquery('#foodItem').val()
+			newItem["location"] = "shop" 
 			postRequest(posturl, newItem)
 		})
 	}

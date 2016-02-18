@@ -1,7 +1,7 @@
 var express = require('express')
 var fs = require('fs')
 var cors = require('cors')
-
+var path = require('path')
 var app = express()
 
 app.use(cors({
@@ -13,17 +13,23 @@ app.get('/', function (req, res) {
 })
 
 app.get('/fridge', function (req, res) {
-  var fullPath =  path.join(__dirname, '/../data/db.json');
-    fs.readFile(fullPath, 'utf8', function(err, data) {
+  console.log("in get")
+   var fullPath = '../data/db.json'
+      fs.readFile('/home/gay/workspace/recipeapp/data/db.json', 'utf8', function(err, data) {
       if (err) {
-        console.log("error", fullPath);
+        console.log("error", err);
       } else {
-        var fridge = JSON.parse(data);
-        res.json(fridge);
+      //  var fridge = data.fridge;
+      //  res.json(data);
+       res.json(JSON.parse(data))
       }
-    })
+     })
+  // res.send("send")
 })
 
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!');
 })
+
+
+// path.join(__dirname, '../data/db.json')

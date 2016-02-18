@@ -1,6 +1,7 @@
 var test = require('tape')
 var getRequest = require('../src/components/getRequest')
 
+var url = 'http://localhost:3000/fridge'
 
 var expectedOutput = {
   "fridge": [
@@ -17,8 +18,9 @@ var expectedOutput = {
 }
 
 test("Get request test", function (t) {
+  console.log(getRequest(url))
 
-	t.equal(getRequest(), expectedOutput, "Expected output matches actual output")
+	t.deepEqual(getRequest(url), expectedOutput, "Expected output matches actual output")
 	t.end()
 })
 

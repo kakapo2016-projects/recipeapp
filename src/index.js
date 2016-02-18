@@ -1,5 +1,3 @@
-var addListener = require('./components/addListener')
+var append = require('./components/append.js')
 
-
-
-
+append('Hello Gay', "#food_list")

@@ -1,11 +1,13 @@
+var getRequest = require('./components/getRequest')
+var extractFridgeList = require('./components/extractFridgeList')
 var addListener = require('./components/addListener')
 var getRequest = require('./components/getRequest')
-var append = require('./components/append')
 var jquery = require('jquery')
 var postRequest = require('./components/postRequest')
 
-append('Hello Gay', "#food_list")
+getRequest('http://localhost:3000/fridge', extractFridgeList)
 
 jquery(document).ready(function() {
 	addListener()
 })
+

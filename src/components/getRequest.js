@@ -1,19 +1,15 @@
 var request = require('superagent')
+var bodyParser = require('body-parser')
+var listLoop = require('./listLoop')
 
-//get request for items in database
 
-
-var getRequest = function(url) {
-
+var getRequest = function(url, callback) {
 	request
 		.get(url)
 		.end(function(err, res) {
-			// append(res.body)
-			console.log(res.body)
-			return res.body
+			callback(res.body, listLoop)
 		}
 	)
 }
-getRequest('http://localhost:3000/fridge')
 
 module.exports = getRequest

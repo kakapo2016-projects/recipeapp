@@ -1,6 +1,6 @@
 var append = require('./append.js')
 var getRequest = require('./getRequest')
-
+var appendToShop = require('./appendToShop')
 
 
 function extractFridgeList (jsonObject, callback) {
@@ -8,13 +8,13 @@ function extractFridgeList (jsonObject, callback) {
   var pantryArr = []
   for (var i =0; i < jsonObject.fridge.length; i++) {
     if (jsonObject.fridge[i].location === "pantry") {
-        partryArr += jsonObject.fridge[i]
+        pantryArr.push(jsonObject.fridge[i])
         //export to pantry list
     } else {
-      shopArr += jsonObject.fridge[i]
+      shopArr.push(jsonObject.fridge[i])
     }
   }
-  callback(shopArr, append)
+  callback(shopArr, appendToShop)
 }
 
 

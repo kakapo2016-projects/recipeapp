@@ -1,8 +1,8 @@
 var $ = require('jquery')
 
-module.exports = function(text, htmlID, id){ 
+module.exports = function(text, htmlID, id){
   $(document).ready(function () {
-    $(htmlID).append("<input type='checkbox' value='itemName' id='" + id + "' >" + text + "<br>")
+    console.log("append")
+    $(htmlID).append("<input type='checkbox' value='"+ text +"' class='chkbx' id='" + id + "' >" + text + "<br>")
   })
 }
-

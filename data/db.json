@@ -1,17 +1,1 @@
-
-{
-  "fridge": [
-      {
-        "item": "eggs",
-        "ID": "d0274960-0084-64e8-cbd4-a8da61bf6886"
-      },
-      {
-        "item": "mushrooms",
-        "ID": "c7c4987e-3119-18b2-55fe-6defae5aa4ea"
-      },
-      {
-        "item": "cheese",
-        "ID": "d5da9624-964d-cc64-5451-99094f1082fa"
-      }
-    ]
-}
+{"fridge":[{"item":"A","ID":"75cefb92-2524-12ae-a4fc-d16b6b5dc993"},{"item":"B","ID":"19093fd9-cc21-cdbe-93cc-82422d05d9fc"},{"item":"Hi","ID":"5749a387-4605-a123-e24d-776a89ceab5e"}]}

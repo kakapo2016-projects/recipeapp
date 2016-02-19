@@ -7,6 +7,7 @@ var getRequest = function(url, callback) {
 	request
 		.get(url)
 		.end(function(err, res) {
+                  console.log(res)
 			callback(res.body, listLoop)
 		}
 	)

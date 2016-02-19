@@ -2,6 +2,7 @@ var jquery = require('jquery')
 var request = require('superagent')
 
 var getPantryRequest = function (url, callback) {
+  console.log('Fuckin dicks man')
   request
     .get(url)
     .end(function(err, res) {
@@ -10,7 +11,6 @@ var getPantryRequest = function (url, callback) {
     }
   )
 }
-
 
 var extractFridgeListPantry = function (jsonObject, callback) {
   var shopArr = []
@@ -36,8 +36,6 @@ jquery("#pantry_list").empty()
     callback(arr[i].item, arr[i].ID)
   }
 }
-
-
 
 function appendToPantry (text, jsonID) { 
   jquery(document).ready(function () {
